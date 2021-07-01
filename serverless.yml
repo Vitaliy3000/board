@@ -64,7 +64,9 @@ provider:
 #    - '!exclude-me-dir/**'
 #    - include-me.py
 #    - include-me-dir/**
-
+plugins:
+  - serverless-python-requirements
+  # - serverless-wsgi
 
 functions:
   taskCRUD:
