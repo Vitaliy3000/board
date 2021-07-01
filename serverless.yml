@@ -25,12 +25,12 @@ provider:
   runtime: python3.8
   lambdaHashingVersion: 20201221
   environment:
-    DB_NAME: postgres
-    USERNAME: postgres
-    PASSWORD: postgres
-    HOST:
+    POSTGRES_DB: postgres
+    POSTGRES_USER: postgres
+    POSTGRES_PASSWORD: postgres
+    POSTGRES_HOST:
       Fn::GetAtt: [PostgresDB, Endpoint.Address]
-    PORT:
+    POSTGRES_PORT:
       Fn::GetAtt: [PostgresDB, Endpoint.Port]
 
 # you can overwrite defaults here
@@ -128,10 +128,10 @@ resources:
       # DependsOn: ServerlessVPCGA
       Type: AWS::RDS::DBInstance
       Properties:
-        MasterUsername: ${self:provider.environment.USERNAME}
-        MasterUserPassword: ${self:provider.environment.PASSWORD}
+        MasterUsername: ${self:provider.environment.POSTGRES_USER}
+        MasterUserPassword: ${self:provider.environment.POSTGRES_PASSWORD}
         AllocatedStorage: 20
-        DBName: ${self:provider.environment.DB_NAME}
+        DBName: ${self:provider.environment.POSTGRES_DB}
         DBInstanceClass: db.t2.micro
         # VPCSecurityGroups:
         # - !GetAtt ServerlessSecurityGroup.GroupId
