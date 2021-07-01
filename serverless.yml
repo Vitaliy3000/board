@@ -132,11 +132,11 @@ resources:
         MasterUserPassword: ${provider.environment.PASSWORD}
         AllocatedStorage: 20
         DBName: ${provider.environment.DB}
-        DBInstanceClass: db.t2.micro
-        VPCSecurityGroups:
-        - !GetAtt ServerlessSecurityGroup.GroupId
-        DBSubnetGroupName:
-          Ref: ServerlessSubnetGroup
+        # DBInstanceClass: db.t2.micro
+        # VPCSecurityGroups:
+        # - !GetAtt ServerlessSecurityGroup.GroupId
+        # DBSubnetGroupName:
+        #   Ref: ServerlessSubnetGroup
         Engine: postgres
         PubliclyAccessible: true
 #    NewResource:
