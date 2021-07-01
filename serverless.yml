@@ -66,8 +66,6 @@ provider:
 #    - include-me-dir/**
 plugins:
   - serverless-python-requirements
-  # - serverless-wsgi
-
 functions:
   taskCRUD:
     handler: src/main.handler

@@ -130,3 +130,6 @@ dmypy.json
 
 # Serverless
 .serverless/
+
+# npm
+node_modules/
