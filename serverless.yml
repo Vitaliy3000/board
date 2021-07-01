@@ -29,9 +29,9 @@ provider:
     USERNAME: postgres
     PASSWORD: postgres
     HOST:
-      Fn::GetAtt: [PostgreSqlRDSInstance, Endpoint.Address]
+      Fn::GetAtt: [PostgresDB, Endpoint.Address]
     PORT:
-      Fn::GetAtt: [PostgreSqlRDSInstance, Endpoint.Port]
+      Fn::GetAtt: [PostgresDB, Endpoint.Port]
 
 # you can overwrite defaults here
 # stage: dev
